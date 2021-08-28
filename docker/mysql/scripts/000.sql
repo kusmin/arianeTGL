@@ -1,1 +1,1 @@
-create table test (name varchar(128) not null);
+create table tglteste (name varchar(128) not null);
