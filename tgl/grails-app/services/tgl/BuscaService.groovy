@@ -34,7 +34,11 @@ class BuscaService {
             projections{
                 groupProperty "consultor"
                 property "consultor"
-                count "consultor"  
+                count "consultor"
+                count "aporte"
+                count "previdencia"
+                count "risco"
+                count "consorcio"  
               }
             
           }

@@ -6,6 +6,8 @@
         <title><g:message code="default.list.label" args="[entityName]" /></title>
     </head>
     <body>
+        
+
         <a href="#list-proposta" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
@@ -35,25 +37,47 @@
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
             <g:if test="${buscar}">
+            <g:set var="quantidade" value="${0}"/>
+            <g:set var="aporte" value="${0}"/>
+            <g:set var="previdencia" value="${0}"/>
+            <g:set var="risco" value="${0}"/>
+            <g:set var="consorcio" value="${0}"/>
             <table class="table table-striped">
                     <thead class="">
                         <tr>
                             <th>Consultor</th>
                             <th>Quantidade</th>
+                            <th>Aporte</th>
+                            <th>Previdencia</th>
+                            <th>Risco</th>
+                            <th>Consorcio</th>
+
                         </tr>
                     </thead>
                     <tbody>
                         <g:each var="dados" in="${buscar}" status="i">
                             <tr>
                                 <td>${dados[0]}</td>
-                                <td>${dados[2]}</td>
+           
+                                <td>${dados[2]}  <g:set var="quantidade" value="${quantidade + dados[2]}"/>  </td>
+                                <td>${dados[3]}  <g:set var="aporte" value="${aporte + dados[3]}"/> </td>
+                                <td>${dados[4]}  <g:set var="previdencia" value="${previdencia + dados[4]}"/> </td>
+                                <td>${dados[5]} <g:set var="risco" value="${risco + dados[5]}"/> </td>
+                                <td>${dados[6]}  <g:set var="consorcio" value="${consorcio + dados[6]}"/> </td>
                             </tr>
                         </g:each>
+                            
+                    </tbody>
+                    <tfoot>
                             <tr>
                                 <td>Total</td>
-                                <td></td>
+                                <td>${quantidade}</td>
+                                <td>${aporte}</td>
+                                <td>${previdencia}</td>
+                                <td>${risco}</td>
+                                <td>${consorcio}</td>
                             </tr>
-                    </tbody>
+                    </tfoot>
                 </table>
             </g:if>
             <div class="pagination">

@@ -35,6 +35,10 @@
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
             <g:if test="${buscar}">
+            <g:set var="aporte" value="${0.00}"/>
+            <g:set var="previdencia" value="${0.00}"/>
+            <g:set var="risco" value="${0.00}"/>
+            <g:set var="consorcio" value="${0.00}"/>
             <table class="table">
                     <thead class="">
                         <tr>
@@ -49,13 +53,22 @@
                         <g:each var="dados" in="${buscar}" status="i">
                             <tr>
                                 <td>${dados[0]}</td>
-                                <td>${dados[2] == null ? '0.00' : dados[2]}</td>
-                                <td>${dados[3] == null ? '0.00' : dados[3]}</td>
-                                <td>${dados[4] == null ? '0.00' : dados[4]}</td>
-                                <td>${dados[5] == null ? '0.00' : dados[5]}</td>
+                                <td>${dados[2] == null ? "0.00" : dados[2]} <g:set var="aporte" value="${aporte + (dados[2] == null ? 0.00 : dados[2])}"/> </td>
+                                <td>${dados[3] == null ? "0.00" : dados[3]} <g:set var="previdencia" value="${previdencia + (dados[3] == null ? 0.00 : dados[3])}"/></td>
+                                <td>${dados[4] == null ? "0.00" : dados[4]} <g:set var="risco" value="${risco + (dados[4] == null ? 0.00 : dados[4])}"/></td>
+                                <td>${dados[5] == null ? "0.00" : dados[5]} <g:set var="consorcio" value="${consorcio + (dados[5] == null ? 0.00 : dados[5])}"/></td>
                             </tr>
                         </g:each>
                     </tbody>
+                    <tfoot>
+                            <tr>
+                                <td>Total</td>
+                                <td>${aporte}</td>
+                                <td>${previdencia}</td>
+                                <td>${risco}</td>
+                                <td>${consorcio}</td>
+                            </tr>
+                    </tfoot>
                 </table>
             </g:if>
             <div class="pagination">
