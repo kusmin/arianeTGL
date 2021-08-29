@@ -31,4 +31,8 @@ class Proposta {
         seguradora nullable:false
         status nullable:false, blank: false
     }
+
+    static mapping = {
+        consultor lazy: false
+    }
 }

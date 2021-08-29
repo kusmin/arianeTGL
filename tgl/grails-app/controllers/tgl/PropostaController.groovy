@@ -6,12 +6,23 @@ import static org.springframework.http.HttpStatus.*
 class PropostaController {
 
     PropostaService propostaService
+    BuscaService buscaService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond propostaService.list(params), model:[propostaCount: propostaService.count()]
+    }
+
+    def searchcount(String consultor, String dataInicial, String dataFinal){
+        def buscar =  buscaService.buscarValoresQuantidadePropostas(consultor, dataInicial, dataFinal)
+        render view: "searchcount", model: [buscar: buscar]
+    }
+
+    def searchsum(String consultor, String dataInicial, String dataFinal){
+        def buscar =  buscaService.buscarValoresDosProdutos(consultor, dataInicial, dataFinal)
+        render view: "searchsum", model: [buscar: buscar]
     }
 
     def show(Long id) {
