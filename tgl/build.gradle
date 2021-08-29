@@ -10,8 +10,6 @@ buildscript {
     }
 }
 
-heroku config:set GRADLE_TASK="assemble"
-
 version "0.1"
 group "tgl"
 
