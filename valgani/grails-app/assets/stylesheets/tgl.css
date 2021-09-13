@@ -1,0 +1,164 @@
+/*
+*= require bootstrap.css
+*= require tgl/vendor.css
+*= require tgl/app.css
+*= require main.css
+
+*= require_self
+*/
+
+.igra_field {
+    margin-bottom: 1.0em;
+}
+
+.igra_field_label {
+    font-weight: bold;
+}
+.nav-comandos {
+    margin-top: 6.0em;
+    margin-bottom: 2.0em;
+    font-weight: bold;
+}
+
+.igra_field_value {
+    font-weight: normal;
+}
+
+h3 {
+    font-size: 1.1em;
+}
+
+.separador {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.secao_paciente {
+    margin-bottom: 2.0em;
+}
+
+.secao_paciente_titulo {
+    font-weight: bold;
+    cursor: pointer;
+    color: #3a4c88;
+    font-size: 1.7rem;
+}
+
+.secao_paciente_titulo:hover {
+    text-decoration: underline;
+}
+
+.secao_paciente_conteudo {
+    display: none;
+    font-size: 0.9em;
+}
+
+.secao_paciente_conteudo table {
+    margin-top: 1.0em;
+    margin-bottom: 1.0em;
+}
+
+.secao_paciente_acoes {
+    margin-top: 1.0em;
+}
+
+.secao_paciente_acoes a {
+    float: right;
+    display: inline;
+    margin-right: 2.0em;
+
+}
+
+.pagination {
+        
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: white;
+    box-shadow: none;
+    border-top: solid 1px black;
+}
+
+.breadcrumb {
+    margin-top: 5.0em;
+}
+
+.buttons {
+    background-color: transparent;
+    margin-top: 2.0em;
+}
+
+input[type="checkbox"]{
+    width: auto !important;
+}
+
+.mensagemErro{
+    color: #ff0000;
+    width: 100%;
+    text-align: left;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.labelSessao{
+    font-weight: bolder; 
+    font-size: 1.9rem; 
+    color: #3A4E8A;
+    padding-bottom: 1.5rem;
+}
+
+.labelSubSessao{
+    font-weight: bold; 
+    font-size: 1.75rem;
+    color: #333333;
+    padding-bottom: 1.5rem;
+}
+
+.tituloUrgencia{
+    color: #ff0000;
+}
+
+.conteudoUrgencia{
+    font-size: 1em;
+}
+
+@media(max-width:767px) {
+    .form-group {
+        width: 100% !important;
+        
+    }
+
+    .form-group input {
+        
+    }
+
+    table tbody tr td {
+        padding-top: 2.0em;
+        padding-bottom: 2.0em;
+    }
+
+    .nav-comandos {
+        margin-top: 4.0em;
+        border-bottom: solid 1px black;
+        margin-bottom: 1.0em;
+        font-weight: bold;
+    }
+
+    .nav-comandos ul li {
+        margin-bottom: 1.0em;
+        font-size: 0.8em;
+        
+        display: inline !important;
+        
+    }
+
+    .pagination .step {
+        display: none !important;
+    }
+
+    .complementos_paciente {
+        margin-top: 3.0em;
+        border-top: solid 1px black;
+    }
+    
+}
