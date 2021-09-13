@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="layout" content="main" />
+        <meta name="layout" content="tglMain" />
         <g:set var="entityName" value="${message(code: 'proposta.label', default: 'Proposta')}" />
         <title><g:message code="default.create.label" args="[entityName]" /></title>
     </head>
     <body>
-        <a href="#create-proposta" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
-                <li><a class="home" href="${createLink(uri: '/')}">Lista</a></li>
                 <li><g:link class="list" action="index">Nova</g:link></li>
             </ul>
         </div>
