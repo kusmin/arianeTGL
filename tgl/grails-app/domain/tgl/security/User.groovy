@@ -24,6 +24,8 @@ class User implements Serializable {
     String cidade
     String uf
 
+    String cargo
+
     
 
     Set<Role> getAuthorities() {
